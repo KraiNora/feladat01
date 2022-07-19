@@ -1,5 +1,3 @@
-package com.company;
-
 public class Feladat01 {
 
     public int feladat01(String[] szinek){
