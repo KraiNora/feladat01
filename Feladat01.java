@@ -1,28 +1,17 @@
 public class Feladat01 {
-
     public int feladat01(String[] szinek){
         int len = szinek.length;
-
-        if(len <= 1)
-            return 0;
-        if(len == 2)
-            return 1;
-
-        else {
-            int n = 1;
-            for (int i = len; i > 0; i--) {
-                n *= i;
-            }
-
-            int k = 2;
-
-            int nmink = 1;
-            for (int i = len - k; i > 0; i--)
-                nmink *= i;
-
-            return n/(k*nmink)+1;
+        int n = 1;
+        for (int i = len; i > 0; i--) {
+            n *= i;
         }
+        int k = 2;
 
+        int nmink = 1;
+        for (int i = len - k; i > 0; i--)
+            nmink *= i;
+
+        return n / (k * nmink) + n / (k * (k + 1));
     }
 
 
@@ -30,10 +19,10 @@ public class Feladat01 {
 
         Feladat01 f = new Feladat01();
         String[] szinek0 = {};
-        String[] szinek1 = {"piros", "kek", "zold" };
-        String[] szinek2 = {"piros"};
-        String[] szinek3 = {"piros", "kek"};
-        int keveres = f.feladat01(szinek1);
+        String[] szinek1 = {"piros"};
+        String[] szinek2 = {"piros", "kek"};
+        String[] szinek3 = {"piros", "kek", "zold" };
+        int keveres = f.feladat01(szinek3);
         System.out.println("valasz: " + keveres);
     }
 }
