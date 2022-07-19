@@ -1,17 +1,30 @@
 public class Feladat01 {
+
     public int feladat01(String[] szinek){
         int len = szinek.length;
-        int n = 1;
-        for (int i = len; i > 0; i--) {
-            n *= i;
-        }
+        if(len<=1)
+            return 0;
+
+        int result = 0;
+
         int k = 2;
 
-        int nmink = 1;
-        for (int i = len - k; i > 0; i--)
-            nmink *= i;
+        for(int i=0;i<len;i++){
+            result += factorial(1,len)/(factorial(1,k) * factorial(1,len-k));
+            k++;
+        }
 
-        return n / (k * nmink) + n / (k * (k + 1));
+        return result;
+    }
+
+    static int factorial(int begin, int end){
+        int fact = 1;
+        int i = begin;
+        while(i<=end){
+            fact*=i;
+            i++;
+        }
+        return fact;
     }
 
 
