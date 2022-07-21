@@ -10,16 +10,16 @@ public class Feladat01 {
         int k = 2;
 
         for(int i=0;i<len;i++){
-            result += factorial(1,len)/(factorial(1,k) * factorial(1,len-k));
+            result += factorial(len)/(factorial(k) * factorial(len-k));
             k++;
         }
 
         return result;
     }
 
-    static int factorial(int begin, int end){
+    static int factorial(int end){
         int fact = 1;
-        int i = begin;
+        int i = 1;
         while(i<=end){
             fact*=i;
             i++;
